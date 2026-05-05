@@ -1,0 +1,28 @@
+# Python
+__pycache__/
+*.py[cod]
+.python-version
+
+# Virtual environments
+venv/
+.venv/
+venv_tolva/
+
+# macOS
+.DS_Store
+
+# Generated outputs
+resultados/
+capturas/
+debug_*.png
+*.npy
+clasificacion_material.json
+
+# Large local model checkpoints.
+# The main 02_detectar_tolva.py script downloads HuggingFace models by id,
+# so these local checkpoint files are not required for the minimal workflow.
+checkpoints/
+
+# Local caches
+.cache/
+.huggingface/
