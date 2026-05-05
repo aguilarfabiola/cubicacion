@@ -21,6 +21,8 @@ No se deben subir a GitHub: `venv_tolva/`, `checkpoints/`, `resultados/`, `__pyc
 
 Python recomendado: 3.10, 3.11 o 3.12.
 
+macOS/Linux:
+
 ```bash
 python3 -m venv venv_tolva
 source venv_tolva/bin/activate
@@ -28,12 +30,37 @@ pip install --upgrade pip
 pip install -r requirements.txt
 ```
 
-En Apple Silicon, PyTorch usa MPS si esta disponible. En NVIDIA, usa CUDA si la instalacion local de PyTorch lo soporta. En CPU funciona, pero sera mas lento.
+Windows PowerShell:
+
+```powershell
+py -3.11 -m venv venv_tolva
+.\venv_tolva\Scripts\Activate.ps1
+python -m pip install --upgrade pip
+pip install -r requirements.txt
+```
+
+Si PowerShell bloquea la activacion del entorno virtual, ejecutar una vez:
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser RemoteSigned
+```
+
+En Apple Silicon, PyTorch usa MPS si esta disponible. En Windows con GPU NVIDIA, conviene instalar PyTorch con CUDA siguiendo la instruccion oficial de PyTorch para la version de CUDA del equipo. En CPU funciona, pero sera mas lento.
+
+Nota para Windows: `requirements.txt` instala `sam2` desde GitHub. Si falla esa instalacion, instalar Git para Windows y Microsoft C++ Build Tools, reiniciar la terminal y repetir `pip install -r requirements.txt`.
 
 ## Ejecutar
 
+macOS/Linux:
+
 ```bash
 python3 02_detectar_tolva.py imagenes_prueba/tolva_llena.png
+```
+
+Windows PowerShell:
+
+```powershell
+python 02_detectar_tolva.py imagenes_prueba/tolva_llena.png
 ```
 
 Salida principal:
